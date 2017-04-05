@@ -15,7 +15,7 @@ public class Welcome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        handler.sendEmptyMessageDelayed(0,2000);
+        handler.sendEmptyMessageDelayed(0,3000);
     }
 
     private Handler handler = new Handler(){
