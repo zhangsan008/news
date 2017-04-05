@@ -4,7 +4,11 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_new"
-    tools:context="com.example.administrator.news.activity.Welcome">
+    tools:context="com.example.administrator.news.activity.MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="主页面"
+        android:textSize="20sp" />
 </RelativeLayout>
