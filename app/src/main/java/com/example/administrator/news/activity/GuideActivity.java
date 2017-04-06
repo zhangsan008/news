@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -33,7 +32,7 @@ public class GuideActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
-        viewpager = (ViewPager) findViewById(R.id.viewpage);
+        viewpager = (ViewPager) findViewById(R.id.viewpager);
         start_main = (Button) findViewById(R.id.start_main);
         point_group = (LinearLayout) findViewById(R.id.point_group);
         img_red_point = (ImageView) findViewById(R.id.img_red_point);

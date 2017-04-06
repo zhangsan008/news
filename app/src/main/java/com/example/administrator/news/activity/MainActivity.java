@@ -1,12 +1,20 @@
 package com.example.administrator.news.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
 import com.example.administrator.news.R;
+import com.example.administrator.news.fragment.ContentFragment;
+import com.example.administrator.news.fragment.leftmenuFragment;
 import com.example.administrator.news.utils.DensityUtil;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
 public class MainActivity extends SlidingFragmentActivity {
+
+    public static final String LEFT_MENU_TAG = "left_menu_tag";
+    public static final String MAIN_CONTENT_TAG = "main_content_tag";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +35,20 @@ public class MainActivity extends SlidingFragmentActivity {
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 
         //设置主页占据的宽度
-        slidingMenu.setBehindOffset(DensityUtil.dip2px(MainActivity.this,200));
+        slidingMenu.setBehindOffset(DensityUtil.dip2px(MainActivity.this, 200));
+
+        //初始化Fragment
+        initFragment();
+    }
+
+    private void initFragment() {
+        //得到FramentManger
+        FragmentManager fm = getSupportFragmentManager();
+        //开启事务
+        FragmentTransaction ft = fm.beginTransaction();
+        //替换
+        ft.replace(R.id.activity_main, new ContentFragment(), MAIN_CONTENT_TAG);
+        ft.replace(R.id.left_menu, new leftmenuFragment(), LEFT_MENU_TAG);
+        ft.commit();
     }
 }
