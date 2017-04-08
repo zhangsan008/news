@@ -20,7 +20,14 @@ public class MainActivity extends SlidingFragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initSlidingMenu();
 
+
+        //初始化Fragment
+        initFragment();
+    }
+
+    private void initSlidingMenu() {
         //设置左侧菜单
         setBehindContentView(R.layout.activity_leftmenu);
 
@@ -36,9 +43,6 @@ public class MainActivity extends SlidingFragmentActivity {
 
         //设置主页占据的宽度
         slidingMenu.setBehindOffset(DensityUtil.dip2px(MainActivity.this, 200));
-
-        //初始化Fragment
-        initFragment();
     }
 
     private void initFragment() {
